@@ -1,0 +1,14 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db" // Você pode especificar o caminho do banco de dados SQLite
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Task {
+  id    Int    @id @default(autoincrement())
+  title String
+  done  Boolean @default(false)
+}
