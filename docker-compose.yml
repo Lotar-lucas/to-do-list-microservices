@@ -4,7 +4,7 @@ services:
   tasks:
     build: ./tasks_service
     ports:
-      - "3000:3000" # Expondo a porta 3000 para o NestJS
+      - "3000:3000" # Exposing port 3000 for NestJS."
     environment:
       DATABASE_URL: sqlite:////data/tasks.db
     volumes:
@@ -13,7 +13,7 @@ services:
   # reminders:
   #   build: ./reminders-service
   #   ports:
-  #     - "3001:3000"
+  #     - "3001:3000" # Exposing port 3001 for NestJS."
   #   environment:
   #     DATABASE_URL: sqlite:////data/reminders.db
   #   volumes:
@@ -22,12 +22,3 @@ services:
 volumes:
   tasks-data:
   reminders-data:
-
-
-# version: '3.8'
-# services:
-#   tasks:
-#     build:
-#       context: ./tasks-service
-#     ports:
-#       - "3000:3000"

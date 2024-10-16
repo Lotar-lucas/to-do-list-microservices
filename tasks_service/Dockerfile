@@ -1,24 +1,23 @@
-# Use a imagem oficial do Node.js como base
+# Use the official Node.js image as the base
 FROM node:18
 
-# Defina o diretório de trabalho
+# Set the working directory
 WORKDIR /app
 
-# Copie os arquivos package.json e package-lock.json
+# Copy the package.json and package-lock.json files
 COPY ./tasks_service/package.json ./tasks_service/package-lock.json ./
 
-
-# Instale as dependências
+# Install the dependencies
 RUN npm install
 
-# Copie o restante do código da aplicação
+# Copy the rest of the application code
 COPY /tasks_service ./
 
-# Execute o build da aplicação NestJS
+# Run the NestJS application build
 RUN npm run build
 
-# Exponha a porta do NestJS
+# Expose the NestJS port
 EXPOSE 3000
 
-# Comando para iniciar a aplicação
+# Command to start the application
 CMD ["npm", "run", "start:prod"]
