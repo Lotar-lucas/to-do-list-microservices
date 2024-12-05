@@ -5,13 +5,13 @@ FROM node:18
 WORKDIR /app
 
 # Copy the package.json and package-lock.json files
-COPY ./tasks_service/package.json ./tasks_service/package-lock.json ./
+COPY package*.json ./
 
 # Install the dependencies
 RUN npm install
 
 # Copy the rest of the application code
-COPY /tasks_service ./
+COPY . .
 
 # Run the NestJS application build
 RUN npm run build
