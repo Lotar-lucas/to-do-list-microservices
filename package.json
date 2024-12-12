@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "compose":"docker-compose up" 
+  }
+}

@@ -1,17 +1,17 @@
 # Use the official Node.js image as the base
-FROM node:18
+FROM node:18-bullseye
 
 # Set the working directory
 WORKDIR /app
 
 # Copy the package.json and package-lock.json files
-COPY ./tasks_service/package.json ./tasks_service/package-lock.json ./
+COPY package*.json ./
 
 # Install the dependencies
 RUN npm install
 
 # Copy the rest of the application code
-COPY /tasks_service ./
+COPY . .
 
 # Run the NestJS application build
 RUN npm run build

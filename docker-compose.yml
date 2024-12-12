@@ -1,6 +1,9 @@
 version: '3.8'
 
 services:
+  app:
+    environment:
+      - PRISMA_CLI_QUERY_ENGINE_TYPE=binary
   tasks:
     build: ./tasks_service
     ports:
